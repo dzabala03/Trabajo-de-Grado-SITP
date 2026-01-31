@@ -1,43 +1,29 @@
-# 👥 SITP-UserProfiling: Caracterización de Usuarios mediante la Encuesta de Transporte y Entornos Urbanos
+# 👥 SITP-UserProfiling: Segmentación de Usuarios basada en Validez Psicométrica
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
-![Machine Learning](https://img.shields.io/badge/ML-Clustering%20Multidmensional-orange.svg)
-![Location](https://img.shields.io/badge/City-Bogot%C3%A1%2C%20Colombia-red.svg)
+![Statistics](https://img.shields.io/badge/Stats-Factor%20Analysis-green.svg)
+![Status](https://img.shields.io/badge/Status-Analizando%20Estructura%20Factorial-yellow.svg)
 
 ## 📌 Descripción del Proyecto
-Este proyecto de grado se enfoca en la identificación y análisis de **perfiles de usuario** del Sistema Integrado de Transporte Público (SITP) en Bogotá. A través de técnicas de **Ciencia de Datos**, transformamos las respuestas de la *Encuesta de Transporte y Entornos Urbanos* en arquetipos de ciudadanos que permiten entender no solo cómo se mueven, sino por qué lo hacen y cómo perciben su ciudad.
+Este proyecto de grado utiliza la *Encuesta de Transporte y Entornos Urbanos* de Bogotá para perfilar a los usuarios del SITP. A diferencia de análisis descriptivos convencionales, este trabajo implementa un pipeline estadístico riguroso para asegurar que las dimensiones de **satisfacción, seguridad y entorno urbano** sean válidas y confiables antes de proceder a la segmentación.
 
-El núcleo del proyecto es pasar de un análisis basado en rutas a uno basado en el **comportamiento y percepción humana**.
+## 🛠️ Metodología y Avance Técnico
+Actualmente, el proyecto se encuentra en la fase de **validación de constructos**, siguiendo este flujo:
 
-## 📊 El Dataset: Dimensiones de Análisis
-La base de datos cuenta con variables de alta dimensionalidad que hemos categorizado en:
-
-* **Socio-Demográficas:** Edad, género, nivel educativo y ubicación (Localidad/UPL).
-* **Hábitos de Movilidad:** Frecuencia de uso, franjas horarias y motivos de elección (economía, rapidez, necesidad).
-* **Satisfacción (Escala Likert 1-5):** Evaluación de 17 factores incluyendo manejo del conductor, aseo, tarifas y frecuencias.
-* **Seguridad y Entorno:** Percepción de seguridad dentro del bus, en paraderos y en infraestructuras del barrio (parques, puentes, iluminación).
-* **Eventos Críticos:** Registros de accidentes o golpes sufridos en el último año.
-
-## 🛠️ Metodología Técnica
-El flujo de trabajo sigue el estándar de un proyecto de Machine Learning:
-
-1.  **Ingeniería de Características:** Tratamiento de datos faltantes y codificación de variables categóricas.
-2.  **Análisis de Componentes Principales (PCA):** Reducción de las ~50 variables de satisfacción y entorno para evitar la "maldición de la dimensionalidad".
-3.  **Clustering (K-Means / K-Prototypes):** Segmentación de usuarios basada en la similitud de sus respuestas.
-4.  **Análisis de Factores de Expansión:** Aplicación de pesos estadísticos para que los resultados sean representativos de la población de Bogotá.
+1. **Limpieza y Tratamiento de Faltantes:** Procesamiento de datos de la encuesta y manejo de respuestas nulas.
+2. **Análisis Factorial Exploratorio (AFE):** Identificación de las variables latentes que explican la percepción del usuario.
+3. **Consistencia Interna (Alfa de Cronbach):** Verificación de la fiabilidad de las escalas. (Resultado actual: > 0.70, nivel aceptable).
+4. **Análisis Factorial Confirmatorio (AFC):** Validación de la estructura teórica de los factores identificados.
 
 
+## 📊 Dimensiones Evaluadas
+* **Satisfacción del Servicio:** Percepción sobre conductores, aseo, frecuencias y tarifas.
+* **Seguridad Percibida:** Evaluación de riesgos dentro del vehículo y en el entorno (paraderos/estaciones).
+* **Calidad del Entorno Urbano:** Estado de la infraestructura en el barrio (iluminación, puentes, andenes).
 
-## 🚀 Perfiles Identificados (Ejemplos)
-* **El Usuario por Necesidad:** Alta frecuencia, bajos ingresos, percepción crítica de la seguridad.
-* **El Usuario por Eficiencia:** Elige el sistema por rapidez o Pico y Placa; valora la cobertura de rutas.
-* **El Perfil Vulnerable:** Usuarios con alta tasa de incidentes o percepción de inseguridad en entornos específicos (puentes/paraderos).
-
-## 📂 Estructura del Repositorio
-* `notebooks/`: EDA (Análisis Exploratorio) y modelado paso a paso.
-* `data/`: Diccionario de variables y guía de acceso al dataset original.
-* `src/`: Funciones de procesamiento y visualización de clústeres.
-* `results/`: Reportes finales y visualizaciones geográficas.
+## 🚀 Próximos Pasos
+* 🔄 **Clustering Multidimensional:** Una vez validados los factores, se utilizarán los puntajes factoriales para agrupar a los usuarios en perfiles (ej. Usuarios Críticos, Usuarios Satisfechos, Usuarios Vulnerables).
+* 📍 **Georreferenciación:** Mapeo de perfiles por Localidad y UPL.
 
 ---
-**Desarrollado como proyecto de grado para entender y mejorar la movilidad en Bogotá.**
+**Nota:** Este repositorio documenta el proceso desde la limpieza técnica hasta la interpretación psicométrica del usuario del SITP.
