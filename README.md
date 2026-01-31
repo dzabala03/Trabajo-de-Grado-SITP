@@ -1,4 +1,4 @@
-# 👥 SITP-UserProfiling: Segmentación de Usuarios basada en Validez Psicométrica
+# 👥 Segmentación de usuarios del Sistema Integrado de Transporte Público (SITP) de Bogotá mediante técnicas de Aprendizaje No Supervisado
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
 ![Statistics](https://img.shields.io/badge/Stats-Factor%20Analysis-green.svg)
